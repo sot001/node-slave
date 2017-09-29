@@ -2,10 +2,9 @@
 FROM sot001/ansible-slave:latest
 
 USER root
-RUN wget -qO- https://deb.nodesource.com/setup_6.x | bash - && \
-#    DEBIAN_FRONTEND=noninteractive  \
-#    apt-get update -y            && \
-    DEBIAN_FRONTEND=noninteractive  \
+RUN wget -qO- https://deb.nodesource.com/setup_6.x | bash - 
+
+RUN DEBIAN_FRONTEND=noninteractive  \
     apt-get install nodejs -y && \
     npm install -g nave
 
